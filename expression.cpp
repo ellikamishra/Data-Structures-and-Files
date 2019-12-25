@@ -7,13 +7,15 @@
 //============================================================================
 
 #include <iostream>
+#include<algorithm>
 #include<cstring>
 #include"stack.h"
 using namespace std;
 
  class expression{
 
-    	char a[100];
+    	string a;
+    	
 
         public:
     	void display();
@@ -52,13 +54,13 @@ int main() {
 void expression::input()
 {   cout<<"Enter expression"<<endl;
     cin.ignore();
-	cin.getline(a,100);
+    getline(cin, a);
 
 }
 
 
 void expression::display()
-{   int n=strlen(a);
+{   int n=a.length();
 	cout<<"\nExpression is:";
 	for(int i=0;i<n;i++)
 	{
@@ -70,7 +72,7 @@ void expression::display()
 
 void expression::postfix()
 { 	stack s;
-    int n=strlen(a);
+    int n=a.length();
     char b[100];
     int k=0,i=0;
 	for( i=0;i<n;i++)
@@ -139,18 +141,61 @@ int expression::priority(char c)
 
 void expression::prefix()
 {  	stack s;
-	int n=strlen(a);
-	char b[100];
-	int k=0,i=0,j=n,m=0;
-    char c[100];
+    int n,k=0,i;
+	string b;
+	reverse(a.begin(),a.end());
+	
+	
+	 n=a.length();
+	for(int j=0;j<n;j++)
+	{ if(a[j]==')')
+	    {a[j]='(';}
+	  else if(a[j]=='(') 
+	    {a[j]=')';}
+	  else
+	    continue;
+	}
+	cout<<"\nExpression:"<<a<<endl;
+	for( i=0;i<n;i++)
+ 	{ 	if(isalpha(a[i]))
+ 	  { 	b[k]=a[i];k++;
 
-   while(j>=0)
-   {  c[m]=a[j];
-	   j--;m++;
+ 	  }
 
-   }
-   c[m]='\0';
-  cout<<"\n"<<c<<endl;
 
-}
+ 	else if(a[i]==')')
+       {
+      while(s.tope()!='(')
+      { b[k]=s.pop();k++;
 
+
+      }
+      s.pop();
+       }
+ 	else if(a[i]=='(')
+ 	{s.push(a[i]);}
+
+ 		else
+ 		{
+          while(!s.val()&&priority(s.tope())>=priority(a[i]))
+          {
+               b[k]=s.pop();k++;
+ 		  }
+
+         s.push(a[i]);
+
+
+
+        }
+ }
+
+
+	while(!s.val())
+	{b[k]=s.pop();k++;}
+	reverse(b.begin(),b.end());
+   	for(int j=0;j<k;j++)
+  {cout<<b[j];}
+  cout<<endl;
+	}
+	
+    
