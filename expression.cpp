@@ -10,12 +10,13 @@
 #include<algorithm>
 #include<cstring>
 #include"stack.h"
+#include"stack.cpp"
 using namespace std;
 
  class expression{
 
     	string a;
-    	
+        string b;
 
         public:
     	void display();
@@ -23,7 +24,8 @@ using namespace std;
     	void prefix();
     	void postfix();
         int priority(char c);
-
+        void eval();
+        int operate(int,int,char);
 };
 
 
@@ -44,6 +46,8 @@ int main() {
                break;
 	    case 4:e.prefix();
                break;
+	    case 5:e.eval();
+	           break;
 	 }
 
 		 }while(ch!=0);
@@ -71,9 +75,9 @@ void expression::display()
 }
 
 void expression::postfix()
-{ 	stack s;
+{ 	stack<char>s;
     int n=a.length();
-    char b[100];
+
     int k=0,i=0;
 	for( i=0;i<n;i++)
  	{ 	if(isalpha(a[i]))
@@ -112,9 +116,10 @@ void expression::postfix()
 	while(!s.val())
 	{b[k]=s.pop();k++;}
 
-  for(int j=0;j<k;j++)
-  {cout<<b[j];}
-  cout<<endl;
+	for(int j=0;j<k;j++)
+	   {cout<<b[j];}
+	  cout<<endl;
+
 }
 int expression::priority(char c)
 { 	switch(c)
@@ -140,30 +145,43 @@ int expression::priority(char c)
 
 
 void expression::prefix()
-{  	stack s;
+{  	stack<char>s;
+	string c;
     int n,k=0,i;
-	string b;
-	reverse(a.begin(),a.end());
-	
-	
-	 n=a.length();
+    n=a.length();
+    for(int j=0;j<n;j++)
+    {
+    	s.push(a[j]);
+
+
+    }
+    for(int j=0;j<n;j++)
+       {
+        	c[j]=s.pop();
+
+
+        }
+    cout<<c;
+
+
+
 	for(int j=0;j<n;j++)
-	{ if(a[j]==')')
-	    {a[j]='(';}
-	  else if(a[j]=='(') 
-	    {a[j]=')';}
+	{ if(c[j]==')')
+	    {c[j]='(';}
+	  else if(c[j]=='(')
+	    {c[j]=')';}
 	  else
 	    continue;
 	}
-	cout<<"\nExpression:"<<a<<endl;
+	cout<<"\nExpression:"<<c<<endl;
 	for( i=0;i<n;i++)
- 	{ 	if(isalpha(a[i]))
- 	  { 	b[k]=a[i];k++;
+ 	{ 	if(isalpha(c[i]))
+ 	  { 	b[k]=c[i];k++;
 
  	  }
 
 
- 	else if(a[i]==')')
+ 	else if(c[i]==')')
        {
       while(s.tope()!='(')
       { b[k]=s.pop();k++;
@@ -172,17 +190,17 @@ void expression::prefix()
       }
       s.pop();
        }
- 	else if(a[i]=='(')
- 	{s.push(a[i]);}
+ 	else if(c[i]=='(')
+ 	{s.push(c[i]);}
 
  		else
  		{
-          while(!s.val()&&priority(s.tope())>=priority(a[i]))
+          while(!s.val()&&priority(s.tope())>=priority(c[i]))
           {
                b[k]=s.pop();k++;
  		  }
 
-         s.push(a[i]);
+         s.push(c[i]);
 
 
 
@@ -192,10 +210,114 @@ void expression::prefix()
 
 	while(!s.val())
 	{b[k]=s.pop();k++;}
-	reverse(b.begin(),b.end());
-   	for(int j=0;j<k;j++)
-  {cout<<b[j];}
+	for(int j=0;j<n;j++)
+	    {
+	    	s.push(b[j]);
+
+
+	    }
+	 for(int j=0;j<n;j++)
+	     {
+	        b[j]=s.pop();
+
+
+	     }
+
+
+  for(int j=0;j<k;j++)
+   {cout<<b[j];}
   cout<<endl;
+}
+
+void expression::eval()
+{
+	stack<int>s;
+
+	int i=0;
+	int op1,op2;
+	int n=b.length();
+
+	if(isalpha(b[i])||isdigit(b[i]))
+	{ while(i<n)
+	{if(isalpha(b[i]))
+	   { cout<<"Enter value for term"<<endl;
+	     cin>>b[i];
+		 s.push(b[i]);i++;
+	    }
+	else if(isdigit(b[i]))
+	   {
+
+		s.push(b[i]);i++;
+
+	   }
+	  else
+	   { op2=s.pop();
+		 op1=s.pop();
+		 s.push(operate(op1,op2,b[i]));i++;
+
+	   }
+
 	}
+
+	}
+
+	else
+	{ while(i<n)
+	{	if(isalpha(b[i]))
+	   { cout<<"Enter value for term"<<endl;
+	     cin>>b[i];
+		 s.push(b[i]);i++;
+	    }
+	else if(isdigit(b[i]))
+	   {
+
+		s.push(b[i]);i++;
+
+	   }
+	  else
+	   { op1=s.pop();
+		 op2=s.pop();
+		 s.push(operate(op1,op2,b[i]));
+		 i++;
+	   }
+
+
+
+
+	}
+
+	}
+
+	cout<<"Result:"<<s.pop()<<endl;
+
+
+}
+
+int expression::operate(int a,int b,char c)
+{
+	switch(c)
+
+		{
+
+
+
+		  case '+':return a+b;
+
+		  case '-':return a-b;
+
+		  case '*':return a*b;
+
+          case '/':return a/b;
+
+
+
+		}
+
+	return 0;
+
+
+}
+
+
 	
     
