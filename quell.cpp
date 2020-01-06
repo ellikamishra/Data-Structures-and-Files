@@ -6,13 +6,14 @@
  */
 #include<iostream>
 #include "quell.h"
+using namespace std;
 template <class t>
-void quell<t>::enque(t){
+void quell<t>::enque(t a){
 	node *temp;
 
-	t x;
+
 	temp=new node;
-	temp->data=x;
+	temp->data=a;
 	temp->next=NULL;
     if(isempty())
     {   front=temp;
@@ -26,19 +27,29 @@ void quell<t>::enque(t){
     }
 
 }
+
+
+
+
 template <class t>
 int quell<t>::isempty(){
 
    if(front==NULL&&rear==NULL)
   {return 1;}
-
+return 0;
 }
 template <class t>
-t quell<t>::deque(){
-   node *temp;
-   temp=front;
+t quell<t>::deque(int a){
+   node *temp;node *prev;
+   temp=front;prev=front;
+   while(a!=0)
+   {prev=temp;
+	temp=temp->next;
+    a--;
+   }
    t x=temp->data;
-   front=front->next;
+  prev->next=temp->next;
+  delete(temp);
    return x;
 }
 template <class t>
@@ -51,11 +62,11 @@ rear=NULL;
 template <class t>
 quell<t>::~quell() {
 
-	node *temp;
+
 
 	while(front!=NULL)
 	{ front=front->next;
-	  delete temp;
+	  delete front;
 
 	} // TODO Auto-generated destructor stub
 }
