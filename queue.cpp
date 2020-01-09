@@ -89,9 +89,9 @@ void patients::input()
 }
 
 int patients::priorityset()
-{  if(strcmp(disease,"flue")||strcmp(disease,"cough"))
+{  if(!(strcmp(disease,"flue")&&strcmp(disease,"cough")))
        {return 1;}
-   else if(strcmp(disease,"fracture")||strcmp(disease,"injury"))
+   else if(!(strcmp(disease,"fracture")&&strcmp(disease,"injury")))
        {  return 2; }
    else
    { return 3;    }
