@@ -7,8 +7,8 @@
 
 #include<iostream>
 #include "stack.h"
-
-void stack::push(char x)
+template <class t>
+void stack<t>::push(t x)
 {
 	node *temp;
 	temp=new node;
@@ -22,23 +22,23 @@ void stack::push(char x)
 		 top=temp;
      }
 }
-
-char stack::pop()
+template <class t>
+t stack<t>::pop()
 {
 	node *temp=top;
-	char x=top->data;
+	t x=top->data;
 	top=top->next;
 	delete temp;
 	return x;
 }
 
-
-stack::stack() {
+template <class t>
+stack<t>::stack() {
 	top=NULL;// TODO Auto-generated constructor stub
 
 }
-
-stack::~stack() {
+template <class t>
+stack<t>::~stack() {
 node *temp;
 
 while(top!=NULL)
@@ -47,7 +47,8 @@ while(top!=NULL)
 
 } // TODO Auto-generated destructor stub
 }
- int stack::val()
+template <class t>
+ t stack<t>::val()
  {
 	 if(top==NULL)
 	 {return 1;}
@@ -55,8 +56,8 @@ while(top!=NULL)
 	 {return 0;}
 
  }
-
- char stack::tope()
+template <class t>
+ t stack<t>::tope()
  { return top->data;
 
  }

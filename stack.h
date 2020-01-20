@@ -7,21 +7,21 @@
 
 #ifndef STACK_H_
 #define STACK_H_
-
+template <class t>
 class stack {
 
 	struct node{
 
-		int data;
+		t data;
 		struct node *next;
 	};
 	struct node *top;
 public:
 	stack();
-	void push(char x);
-	char pop();
-	int val();
-	char tope();
+	void push(t x);
+	t pop();
+	t val();
+     t tope();
 	virtual ~stack();
 };
 
