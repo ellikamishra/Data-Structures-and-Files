@@ -1,0 +1,230 @@
+----------------------------
+Select the Options
+----------------------------
+1. Create File
+2. Add a Record
+3. Search a Record
+4. Update a Record
+5. Delete a Record
+6. Display Records
+7. Exit
+
+Your Choice: 1
+----------------------------
+
+File Created
+
+----------------------------
+Select the Options
+----------------------------
+0. Exit
+1. Add a Record
+
+Your Choice: 1
+----------------------------
+
+Roll No : 1
+Name    : asdf
+Division: 4
+Address : wert
+
+----------------------------
+Select the Options
+----------------------------
+0. Exit
+1. Add a Record
+
+Your Choice: 1
+----------------------------
+
+Roll No : 2
+Name    : zxcv
+Division: 4
+Address : asde
+
+----------------------------
+Select the Options
+----------------------------
+0. Exit
+1. Add a Record
+
+Your Choice: 1
+----------------------------
+
+Roll No : 3
+Name    : yuio
+Division: 4
+Address : qwer
+
+----------------------------
+Select the Options
+----------------------------
+0. Exit
+1. Add a Record
+
+Your Choice: 1
+----------------------------
+
+Roll No : 4
+Name    : uiop
+Division: 5
+Address : erty
+
+----------------------------
+Select the Options
+----------------------------
+0. Exit
+1. Add a Record
+
+Your Choice: 0
+----------------------------
+
+
+----------------------------
+Select the Options
+----------------------------
+1. Create File
+2. Add a Record
+3. Search a Record
+4. Update a Record
+5. Delete a Record
+6. Display Records
+7. Exit
+
+Your Choice: 2
+----------------------------
+
+Roll No : 5
+Name    : cvbn
+Division: 8
+Address : dfgh
+
+
+----------------------------
+Select the Options
+----------------------------
+1. Create File
+2. Add a Record
+3. Search a Record
+4. Update a Record
+5. Delete a Record
+6. Display Records
+7. Exit
+
+Your Choice: 3
+----------------------------
+
+Roll Number: 2
+
+----------------------------
+
+Record Found:
+
+Roll No : 2
+Name    : zxcv
+Division: 4
+Address : asde
+
+----------------------------
+Select the Options
+----------------------------
+1. Create File
+2. Add a Record
+3. Search a Record
+4. Update a Record
+5. Delete a Record
+6. Display Records
+7. Exit
+
+Your Choice: 4
+----------------------------
+
+Roll Number: 4
+
+----------------------------
+
+Record Found:
+
+Roll No : 4
+Name    : uiop
+Division: 5
+Address : erty
+----------------------------
+
+Updating the Record
+
+New Name    : tryu
+New Division: 7
+New Address : wqas
+
+----------------------------
+Select the Options
+----------------------------
+1. Create File
+2. Add a Record
+3. Search a Record
+4. Update a Record
+5. Delete a Record
+6. Display Records
+7. Exit
+
+Your Choice: 5
+----------------------------
+
+Roll Number: 3
+
+----------------------------
+
+Record Found:
+
+Roll No : 3
+Name    : yuio
+Division: 4
+Address : qwer
+----------------------------
+
+Deleting the Record
+
+----------------------------
+Select the Options
+----------------------------
+1. Create File
+2. Add a Record
+3. Search a Record
+4. Update a Record
+5. Delete a Record
+6. Display Records
+7. Exit
+
+Your Choice: 6
+----------------------------
+
+----------------------------
+RollNo   Name    Div.    Address
+----------------------------
+1       asdf    4       wert
+2       zxcv    4       asde
+3       yuio    4       qwer
+4       uiop    5       erty
+5       cvbn    8       dfgh
+
+----------------------------
+Select the Options
+----------------------------
+1. Create File
+2. Add a Record
+3. Search a Record
+4. Update a Record
+5. Delete a Record
+6. Display Records
+7. Exit
+
+Your Choice: 7
+----------------------------
+
+End
+
+--------------------------------
+Process exited after 114.6 seconds with return value 0
+Press any key to continue . . .
+

@@ -1,0 +1,411 @@
+----------------------------
+Select the Options
+----------------------------
+1. Linear Probing with Replacement
+2. Linear Probing without Replacement
+3. Exit
+
+Your Choice: 2
+----------------------------
+
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+wer
+Enter no.
+1234
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+fgh
+Enter no.
+456
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+dfgh
+Enter no.
+678
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+cvb
+Enter no.
+890
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+wsdf
+Enter no.
+324
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+dfg
+Enter no.
+567
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+bnm
+Enter no.
+675
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+sdf
+Enter no.
+651
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+hjk
+Enter no.
+987
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+dsa
+Enter no.
+231
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+456
+Enter no.
+345
+Table is full
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+rty
+Enter no.
+3456
+Table is full
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+dfg
+Enter no.
+345
+Table is full
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+2
+Enter search value
+987
+Found at position2
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+3
+Index    Name    Tel No          Flag    Chain
+0       cvb     890     1       -1
+1       sdf     651     1       3
+2       hjk     987     1       -1
+3       dsa     231     1       -1
+4       wer     1234    1       5
+5       wsdf    324     1       -1
+6       fgh     456     1       -1
+7       dfg     567     1       2
+8       dfgh    678     1       -1
+9       bnm     675     1       -1
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+0
+----------------------------
+Select the Options
+----------------------------
+1. Linear Probing with Replacement
+2. Linear Probing without Replacement
+3. Exit
+
+Your Choice: 1
+----------------------------
+
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+yui
+Enter no.
+789
+9
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+ygh
+Enter no.
+765
+5
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+ert
+Enter no.
+543
+3
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+pol
+Enter no.
+763
+3
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+rdf
+Enter no.
+086
+6
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+sdf
+Enter no.
+234
+4
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+sds
+Enter no.
+345
+5
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+rty
+Enter no.
+432
+2
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+scv
+Enter no.
+567
+7
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+hjk
+Enter no.
+234
+4
+Table is Full
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+1
+Enter name
+hjk
+Enter no.
+987
+7
+Table is Full
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+2
+Enter search value
+987
+Element not found
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+2
+Enter search value
+432
+Found at position2
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+3
+Index    Name    Tel No          Flag    Chain
+0       pol     763     1       -1
+1                     0       0       -1
+2       rty     432     1       -1
+3       ert     543     1       0
+4       sdf     234     1       -1
+5       ygh     765     1       8
+6       rdf     86      1       -1
+7       scv     567     1       -1
+8       sds     345     1       -1
+9       yui     789     1       -1
+----------------------------
+Select the Options
+----------------------------
+1. Insert a Value
+2. Search for a Value
+3. Display Table
+0
+----------------------------
+Select the Options
+----------------------------
+1. Linear Probing with Replacement
+2. Linear Probing with Replacement
+3. Exit
+
+Your Choice: 0
+----------------------------
+
+
+--------------------------------
+Process exited after 245.6 seconds with return value 0
+Press any key to continue . . .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

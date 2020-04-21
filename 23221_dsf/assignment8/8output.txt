@@ -1,0 +1,84 @@
+Enter the no. of vertices:
+5
+Enter edges (1-5)
+First vertex:
+1
+Second vertex:
+2
+Enter weight
+3
+Enter 1 to contiunue,0 to stop
+1
+First vertex:
+1
+Second vertex:
+3
+Enter weight
+1
+Enter 1 to contiunue,0 to stop
+1
+First vertex:
+2
+Second vertex:
+3
+Enter weight
+7
+Enter 1 to contiunue,0 to stop
+1
+First vertex:
+2
+Second vertex:
+4
+Enter weight
+5
+Enter 1 to contiunue,0 to stop
+1
+First vertex:
+2
+Second vertex:
+5
+Enter weight
+1
+Enter 1 to contiunue,0 to stop
+1
+First vertex:
+3
+Second vertex:
+4
+Enter weight
+2
+Enter 1 to contiunue,0 to stop
+1
+First vertex:
+4
+Second vertex:
+5
+Enter weight
+7
+Enter 1 to contiunue,0 to stop
+0
+Graph is:
+0->12345
+1->03100
+2->30751
+3->17020
+4->05207
+5->01070
+Enter starting vertex(1-5)
+3
+Distance of(1)from source:1
+Distance of(2)from source:4
+Distance of(3)from source:0
+Distance of(4)from source:2
+Distance of(5)from source:5
+Shortest path
+3->1->4->2->5
+Cost12
+
+--------------------------------
+Process exited after 40.88 seconds with return value 0
+Press any key to continue . . .
+
+
+
+

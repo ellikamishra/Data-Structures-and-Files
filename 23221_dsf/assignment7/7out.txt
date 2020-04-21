@@ -1,0 +1,80 @@
+/*
+Enter no. of vertices                                                                                                           
+4                                                                                                                               
+Enter data:                                                                                                                     
+a                                                                                                                               
+Enter data:                                                                                                                     
+b                                                                                                                               
+Enter data:                                                                                                                     
+c                                                                                                                               
+Enter data:                                                                                                                     
+d                                                                                                                               
+Enter edges:                                                                                                                    
+a                                                                                                                               
+b                                                                                                                               
+Enter weight:                                                                                                                   
+2                                                                                                                               
+Enter 1 to continue,0 to stop                                                                                                   
+1                                                                                                                               
+Enter edges:                                                                                                                    
+a                                                                                                                               
+c                                                                                                                               
+Enter weight:                                                                                                                   
+1                                                                                                                               
+Enter 1 to continue,0 to stop                                                                                                   
+1  
+Enter edges:                                                                                                                    
+a                                                                                                                               
+d                                                                                                                               
+Enter weight:                                                                                                                   
+3                                                                                                                               
+Enter 1 to continue,0 to stop                                                                                                   
+1                                                                                                                               
+Enter edges:                                                                                                                    
+b                                                                                                                               
+d                                                                                                                               
+Enter weight:                                                                                                                   
+4                                                                                                                               
+Enter 1 to continue,0 to stop                                                                                                   
+1                                                                                                                               
+Enter edges:                                                                                                                    
+c                                                                                                                               
+d                                                                                                                               
+Enter weight:                                                                                                                   
+5                                                                                                                               
+Enter 1 to continue,0 to stop                                                                                                   
+0                                                                                                                               
+a:                                                                                                                              
+b(2)                                                                                                                            
+c(1)   
+d(3)                                                                                                                            
+b:                                                                                                                              
+a(2)                                                                                                                            
+d(4)                                                                                                                            
+c:                                                                                                                              
+a(1)                                                                                                                            
+d(5)                                                                                                                            
+d:                                                                                                                              
+a(3)                                                                                                                            
+b(4)                                                                                                                            
+c(5)                                                                                                                            
+Min-edge:a-c                                                                                                                    
+---------------------------------------                                                                                         
+Min-edge weight:1                                                                                                               
+Cost:1                                                                                                                          
+---------------------------------------                                                                                         
+Min-edge:a-b                                                                                                                    
+---------------------------------------                                                                                         
+Min-edge weight:2                                                                                                               
+Cost:3                                                                                                                          
+---------------------------------------                                                                                         
+Min-edge:a-d                                                                                                                    
+---------------------------------------                                                                                         
+Min-edge weight:3
+Cost:6                                                                                                                          
+---------------------------------------                                                                                         
+Final Cost:6                                                                                                                    
+Minimum Spanning Tree is:                                                                                                       
+a->b                                                                                                                            
+a->c                                                                                                                            
+a->d   
