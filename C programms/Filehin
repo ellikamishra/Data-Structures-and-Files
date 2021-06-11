@@ -1,0 +1,324 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+typedef struct student
+{
+	int rn;
+	char name[50];
+	char mn[20];
+	int percent;
+}student;
+int main()
+{
+	int n,i,ch,l=1,j,k,r,str[100];
+	char c;
+	FILE *fp;
+	fp=fopen("C","a");
+	FILE *fq;
+    int flag=0;
+	printf("enter no students whoes database you want to create :");
+	scanf("%d",&n);
+	student s,a;
+			for(i=0;i<n;i++)
+		{
+			s.rn=i+1;
+			printf("enter data of roll no %d\n",s.rn);
+			set1:
+			printf("enter name");
+			scanf("%s",s.name);
+			for(j=0;j<strlen(s.name);j++)
+			{
+				if(s.name[j]<65||s.name[j]>123)
+				{
+					printf("invalid input\n");
+					goto set1;
+				}
+			}
+
+			set2:
+			printf("enter mobile number");
+			scanf("%s",s.mn);
+			if(strlen(s.mn)==10)
+			{
+			for(j=0;j<strlen(s.mn);j++)
+						{
+							if(s.mn[j]<48 || s.mn[j]>57)
+							{
+								printf("invalid input\n");
+								goto set2;
+							}
+						}
+			}
+			else
+			{
+				printf("enter 10 digit no\n");
+				goto set2;
+			}
+
+			printf("enter percentage");
+			scanf("%d",&s.percent);
+			fprintf(fp,"%d %s %s %d\n",s.rn,s.name,s.mn,s.percent);
+		}
+		fclose(fp);
+		while(l)
+		{
+			printf("Enter your choice\n1.Add record in file\n2.Search record in file\n3.Display record from file\n4.Modify record in file\n5.Delete record\n");
+			scanf("%d",&ch);
+			switch(ch)
+			{
+		case 1:fp=fopen("C","a");
+			a.rn=n+1;
+			printf("enter data of roll no %d\n",a.rn);
+			set3:
+			printf("enter name");
+			scanf("%s",a.name);
+			for(j=0;j<strlen(a.name);j++)
+			{
+				if(a.name[j]<65||a.name[j]>123)
+				{
+					printf("invalid input\n");
+					goto set3;
+				}
+			}
+			set4:
+			printf("enter mobile number");
+			scanf("%s",a.mn);
+			if(strlen(a.mn)==10)
+			{
+			for(j=0;j<strlen(a.mn);j++)
+						{
+							if(a.mn[j]<48 || a.mn[j]>57)
+							{
+								printf("invalid input\n");
+								goto set4;
+							}
+						}
+			}
+			else
+			{
+				printf("enter 10 digit no\n");
+				goto set4;
+			}
+			printf("enter percentage");
+			scanf("%d",&a.percent);
+			n=n+1;
+			fprintf(fp,"%d %s %s %d\n",a.rn,a.name,a.mn,a.percent);
+			fclose(fp);
+			break;
+		case 2:fp=fopen("C","r");
+			printf("Enter roll no you want to search");
+			scanf("%d",&r);
+			for(i=0;i<n;i++)
+			{
+				fscanf(fp,"%d%s%s%d",&a.rn,a.name,a.mn,&a.percent);
+				if(a.rn==r)
+				{
+					printf("Record present\n");
+					break;
+				}
+			}
+			if(i==n)
+			{
+				printf("Record not present\n");
+			}
+			fclose(fp);
+			break;
+		case 3:
+			fp=fopen("C","r");
+			printf("--------------------------------------------------------------------------------------\n");
+			printf("Roll no\tName\tMobile No\tPercentage\n");
+			printf("--------------------------------------------------------------------------------------\n");
+			for(i=0;i<n;i++)
+			{
+				if(fscanf(fp,"%d%s%s%d",&a.rn,a.name,a.mn,&a.percent)==4)
+				{
+				printf("%d\t%s\t%s\t%d\n",i+1,a.name,a.mn,a.percent);
+				}
+			}
+			printf("--------------------------------------------------------------------------------------\n");
+			fclose(fp);
+			break;
+
+			case 4:fp=fopen("C","r");
+                    fq=fopen("D","w");
+                    flag=0;
+			printf("Enter roll no you want to modify");
+			scanf("%d",&r);
+			for(i=0;i<n;i++)
+			{
+				fscanf(fp,"%d%s%s%d",&a.rn,a.name,a.mn,&a.percent);
+				if(a.rn==r)
+				{
+				    flag=1;
+					int s,z=1;
+					while(z)
+					{
+						printf("Enter your choice:\n1.Modify percentage\n2.Modify mobile no");
+						scanf("%d",&s);
+						switch(s)
+						{
+							case 1:printf("Enter new percent");
+								scanf("%d",&a.percent);
+
+								break;
+                            case 2:printf("Enter new mobile no");
+                                scanf("%s",a.mn);
+                                break;
+						}
+
+						printf("Enter 1 to continue and 0 to stop");
+						scanf("%d",&z);
+
+					}
+					fprintf(fq,"%d %s %s %d\n",a.rn,a.name,a.mn,a.percent);
+				}
+					else
+                    {
+                        fprintf(fq,"%d %s %s %d\n",a.rn,a.name,a.mn,a.percent);
+                    }
+				}
+
+			fclose(fp);
+			fclose(fq);
+			if(flag==0)
+			{
+				printf("Record not present\n");
+			}
+			else
+            {
+                remove("C");
+                rename("D","C");
+			}
+			break;
+			case 5:fp=fopen("C","r");
+                    fq=fopen("D","a");
+                    flag=0;
+			printf("Enter roll no you want to delete\n");
+			scanf("%d",&r);
+			for(i=0;i<n;i++)
+			{
+				fscanf(fp,"%d%s%s%d",&a.rn,a.name,a.mn,&a.percent);
+				if(a.rn==r)
+				{
+				    flag=1;
+					printf("Record deleted successfully\n");
+				}
+					else
+                    {
+                        fprintf(fq,"%d %s %s %d\n",a.rn,a.name,a.mn,a.percent);
+                    }
+				}
+
+			fclose(fp);
+			fclose(fq);
+			if(flag==0)
+			{
+				printf("Record not present\n");
+			}
+			else
+            {
+                remove("C");
+                rename("D","C");
+			}
+			break;
+
+
+		}
+		printf("Enter 1 to continue and 0 to stop");
+		scanf("%d",&l);
+
+}
+}
+/*
+ enter no students whoes database you want to create :2                                                             
+enter data of roll no 1                                                                                            
+enter nameellika                                                                                                   
+enter mobile number1234567890                                                                                      
+enter percentage90                                                                                                 
+enter data of roll no 2                                                                                            
+enter namemohi                                                                                                     
+enter mobile number1234567890                                                                                      
+enter percentage20                                                                                                 
+Enter your choice                                                                                                  
+1.Add record in file                                                                                               
+2.Search record in file                                                                                            
+3.Display record from file                                                                                         
+4.Modify record in file                                                                                            
+5.Delete record                                                                                                    
+1                                                                                                                  
+enter data of roll no 3                                                                                            
+enter namejai                                                                                                      
+enter mobile number1234567890                                                                                      
+enter percentage90         
+Enter 1 to continue and 0 to stop1                                                                                 
+Enter your choice                                                                                                  
+1.Add record in file                                                                                               
+2.Search record in file                                                                                            
+3.Display record from file                                                                                         
+4.Modify record in file                                                                                            
+5.Delete record                                                                                                    
+2                                                                                                                  
+Enter roll no you want to search2                                                                                  
+Record present                                                                                                     
+Enter 1 to continue and 0 to stop1                                                                                 
+Enter your choice                                                                                                  
+1.Add record in file                                                                                               
+2.Search record in file                                                                                            
+3.Display record from file                                                                                         
+4.Modify record in file                                                                                            
+5.Delete record                                                                                                    
+3                                                                                                                  
+--------------------------------------------------------------------------------------                             
+Roll no Name    Mobile No       Percentage   
+--------------------------------------------------------------------------------------                             
+1       ellika  1234567890      56                                                                                 
+2       mohi    0987654321      30                                                                                 
+3       jai     1234567890      90                                                                                 
+--------------------------------------------------------------------------------------                             
+Enter 1 to continue and 0 to stop1                                                                                 
+Enter your choice                                                                                                  
+1.Add record in file                                                                                               
+2.Search record in file                                                                                            
+3.Display record from file                                                                                         
+4.Modify record in file                                                                                            
+5.Delete record                                                                                                    
+4                                                                                                                  
+Enter roll no you want to modify2                                                                                  
+Enter your choice:                                                                                                 
+1.Modify percentage                                                                                                
+2.Modify mobile no1                                                                                                
+Enter new percent25                                                                                                
+Enter 1 to continue and 0 to stop1                                                                                 
+Enter your choice:                     
+1.Add record in file                                                                                               
+2.Search record in file                                                                                            
+3.Display record from file                                                                                         
+4.Modify record in file                                                                                            
+5.Delete record                                                                                                    
+5                                                                                                                  
+Enter roll no you want to delete                                                                                   
+3                                                                                                                  
+Record deleted successfully                                                                                        
+Enter 1 to continue and 0 to stop1                                                                                 
+Enter your choice                                                                                                  
+1.Add record in file                                                                                               
+2.Search record in file                                                                                            
+3.Display record from file                                                                                         
+4.Modify record in file                                                                                            
+5.Delete record        
+3                                                                                                                  
+--------------------------------------------------------------------------------------                             
+Roll no Name    Mobile No       Percentage                                                                         
+--------------------------------------------------------------------------------------                             
+1       ellika  1234567890      56                                                                                 
+2       mohi    0987654321      25                                                                                 
+--------------------------------------------------------------------------------------                             
+Enter 1 to continue and 0 to stop0                                                                                 
+                          
+
+
+
+
+
+*/
+
