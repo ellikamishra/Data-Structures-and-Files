@@ -21,7 +21,7 @@ public:
 	void push(t x);
 	t pop();
 	t val();
-     t tope();
+    t tope();
 	virtual ~stack();
 };
 

@@ -17,7 +17,7 @@ void quell<t>::enque(t a){
 	temp->next=NULL;
     if(isempty())
     {   front=temp;
-    	rear=temp;
+    	  rear=temp;
     }
 
     else

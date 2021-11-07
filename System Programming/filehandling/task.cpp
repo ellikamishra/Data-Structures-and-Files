@@ -33,10 +33,11 @@ int main()
 		strcpy(data,line1.c_str());
 		while(strtok_r(data," ",&data)){           //count tokens for each line
 			
-			i++;
+			
+			i++;cout<<data<<"\n";
 		}
 		
-		cout<<line1<<"-"<<i<<"\n";
+		// cout<<line1<<"-"<<i<<"\n";
 		
         
 	}
